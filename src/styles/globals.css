@@ -1,0 +1,1627 @@
+/* Reset dan base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Base styles for the two-panel layout, applies to Welcome, Login, Register */
+  /* These styles are applied when the body-welcome or body-auth class is present */
+  .body-welcome,
+  .body-auth {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden; /* Prevent scroll on the main body */
+      box-sizing: border-box;
+      font-size: 16px;
+      background: none; /* Reset background for two-panel layout */
+      color: initial;
+      text-shadow: none;
+  }
+  
+  /* Panel kiri untuk gambar latar belakang */
+  .left-panel {
+      flex: 0.8; /* Takes about 40% width */
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #f0f2f5; /* Fallback color */
+      min-width: 300px; /* Minimum width for the left panel */
+  }
+  
+  /* Panel kanan for forms and content */
+  .right-panel {
+      flex: 1.2; /* Takes about 60% width */
+      background-color: #FFFFFF; /* White background for form area */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+      text-align: center;
+      overflow-y: auto; /* Allow scrolling for content if it overflows */
+  }
+  
+  /* Wrapper for form content */
+  .form-wrapper {
+      width: 100%;
+      max-width: 450px; /* Max width for the form itself */
+      margin: 0 auto;
+  }
+  
+  /* Page titles (Login/Register/Welcome) */
+  h2 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #333333;
+      margin-bottom: 50px;
+  }
+  
+  /* Slogan text on the Welcome page */
+  .welcome-slogan {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-top: -30px; /* Adjust as needed */
+    margin-bottom: 40px; /* Space between slogan and buttons */
+    line-height: 1.6;
+  }
+  
+  /* Button group for Welcome page buttons */
+  .button-group {
+      display: flex;
+      justify-content: center; /* Center buttons horizontally */
+      gap: 15px; /* Space between buttons */
+  }
+  
+  /* Buttons for Welcome page */
+  .btn-home-login,
+  .btn-home-register {
+      display: inline-block;
+      padding: 12px 25px;
+      border-radius: 6px;
+      font-size: 1.45rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-home-login {
+      background-color: #FFFFFF;
+      color: #3F7D58;
+      border: 2px solid #3F7D58;
+  }
+  
+  .btn-home-login:hover {
+      background-color: #3F7D58;
+      color: white;
+      border-color: #3F7D58;
+      transform: translateY(-2px);
+  }
+  
+  .btn-home-login:active {
+      transform: translateY(0);
+  }
+  
+  .btn-home-register {
+      background-color: #3F7D58;
+      color: white;
+      border: 2px solid #3F7D58;
+  }
+  
+  .btn-home-register:hover {
+      background-color: #356D4D;
+      border-color: #356D4D;
+      transform: translateY(-2px);
+  }
+  
+  .btn-home-register:active {
+      transform: translateY(0);
+  }
+  
+  /* Input group (label + input field) */
+  .input-group {
+      text-align: left;
+      margin-bottom: 30px;
+  }
+  
+  .input-group label {
+      display: block;
+      font-size: 1.25rem;
+      color: #555555;
+      margin-bottom: 5px; /* Changed from 10px to 5px to reduce gap */
+      font-weight: 500;
+  }
+  
+  .input-group input[type="text"],
+  .input-group input[type="email"],
+  .input-group input[type="password"] {
+      width: calc(100% - (16px * 2));
+      padding: 16px;
+      border: 1px solid #CCCCCC;
+      border-radius: 6px;
+      font-size: 1.25rem;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .input-group input:focus {
+      border-color: #3F7D58;
+      box-shadow: 0 0 0 3px rgba(63, 125, 88, 0.2);
+  }
+  
+  /* Wrapper for password input with toggle icon */
+  .password-input-wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border: 1px solid #CCCCCC;
+      border-radius: 6px;
+      box-sizing: border-box;
+      width: 100%;
+  }
+  
+  .password-input-wrapper input {
+      flex-grow: 1;
+      border: none;
+      padding: 16px 14px;
+      outline: none;
+  }
+  
+  .toggle-password {
+      position: absolute;
+      right: 14px; /* Adjusted from 50px to 15px to be inside the input */
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #AAAAAA;
+      font-size: 1.1rem;
+      z-index: 10;
+  }
+  
+  .toggle-password:hover {
+      color: #777777;
+  }
+  
+  /* Main button (Sign In/Register) - for login/register pages */
+  .btn-primary {
+      width: 100%;
+      padding: 18px;
+      background-color: #3F7D58;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.45rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 35px;
+  }
+  
+  .btn-primary:hover {
+      background-color: #356D4D;
+      transform: translateY(-2px);
+  }
+  
+  .btn-primary:active {
+      transform: translateY(0);
+  }
+  
+  /* Text at the bottom of the form (Don't have account? / Already have account?) */
+  .bottom-text {
+      margin-top: 40px;
+      font-size: 1.2rem;
+      color: #777777;
+  }
+  
+  .bottom-text a {
+      color: #3F7D58;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.3s ease, text-decoration 0.3s ease;
+  }
+  
+  .bottom-text a:hover {
+      text-decoration: underline;
+      color: #356D4D;
+  }
+  
+  /* Global styles for the React App container (for pages other than welcome/auth) */
+  .App {
+    /* This ensures other pages like Dashboard, Detection, etc. do not inherit the flex body layout */
+    display: block;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light gray background for other pages */
+  }
+  
+  
+  /* Override Bootstrap styles for general elements */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .card {
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+    border: 1px solid rgba(0, 0, 0, 0.125) !important;
+  }
+  
+  .btn {
+    transition: all 0.2s ease-in-out;
+    border-radius: 0.375rem !important;
+  }
+  
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  
+  .form-control:focus {
+    border-color: #86b7fe !important;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25) !important;
+  }
+  
+  /* Responsive for two-panel layout */
+  @media (max-width: 768px) {
+      .body-welcome,
+      .body-auth {
+          flex-direction: column;
+          height: auto;
+          overflow-y: auto;
+          font-size: 14px;
+      }
+  
+      .left-panel {
+          display: none; /* Hide left panel on mobile */
+      }
+  
+      .right-panel {
+          width: 100%;
+          min-height: 100vh;
+          padding: 30px 25px;
+          box-shadow: none;
+      }
+  
+      h2 {
+          font-size: 2.5rem;
+          margin-bottom: 30px;
+      }
+  
+      .button-group {
+          flex-direction: column; /* Buttons become vertical on mobile */
+          gap: 10px; /* Space between buttons on mobile */
+      }
+  
+      .btn-home-login,
+      .btn-home-register {
+          width: 100%; /* Buttons take full width on mobile */
+          padding: 10px 20px;
+          font-size: 1.2rem;
+      }
+  
+      .input-group {
+          margin-bottom: 20px;
+      }
+  
+      .input-group label,
+      .input-group input {
+          font-size: 1rem;
+      }
+  
+      .btn-primary {
+          padding: 14px;
+          font-size: 1.2rem;
+      }
+  
+      .bottom-text {
+          margin-top: 25px;
+          font-size: 1rem;
+      }
+  }
+  
+  /* Optional: For tablet screens (769px to 1024px) */
+  @media (min-width: 769px) and (max-width: 1024px) {
+      .body-welcome,
+      .body-auth {
+          font-size: 15px;
+      }
+      .left-panel {
+          flex: 0.7;
+      }
+  
+      .right-panel {
+          flex: 1.3;
+      }
+      h2 {
+          font-size: 3rem;
+      }
+      .input-group label,
+      .input-group input {
+          font-size: 1.1rem;
+      }
+      .btn-primary {
+          font-size: 1.3rem;
+      }
+      .bottom-text {
+          font-size: 1.1rem;
+      }
+      .btn-home-login,
+      .btn-home-register {
+          font-size: 1.3rem;
+          padding: 10px 20px;
+      }
+  }
+  /* Hero Section */
+  .hero-section {
+      background-color: #3F7D58; /* Dark green */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px 5%;
+      border-radius: 45px;
+      margin: 20px 5%;
+      gap: 20px;
+  }
+  
+  .hero-content {
+      max-width: 50%;
+      text-align: left;
+      padding-top: 10px;
+  }
+  
+  .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 40px;
+      color: white;
+  }
+  
+  .hero-content .hero-highlight {
+      color: inherit;
+  }
+  
+  .hero-content .hero-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      color: #D9E5DE; /* White with 80% opacity */
+  }
+  
+  .btn-primary-hero {
+      display: inline-block;
+      background-color: #FFFFFF;
+      color: #3F7D58;
+      padding: 20px 30px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-primary-hero:hover {
+      background-color: #E0E0E0;
+      color: #3F7D58;
+  }
+  
+  .hero-image {
+      max-width: 30%;
+      text-align: right;
+      flex-shrink: 0;
+  }
+  
+  .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      /* content: url('../images/plant1.png'); <-- REMOVE: this is for vanilla CSS, handled by React import */
+  }
+  
+  /* WHY CHOOSE AGROSENTRY? */
+  .why-choose-section {
+      background-color: #F8F9FA;
+      padding: 80px 5%;
+      text-align: center;
+  }
+  
+  .why-choose-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 60px;
+  }
+  
+  .features-grid {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      flex-wrap: wrap;
+  }
+  
+  .feature-item {
+      background-color: #FFFFFF;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  .feature-item .icon-image {
+      width: 80px; /* Adjust size as needed to match design */
+      height: 80px; /* Adjust size as needed to match design */
+      object-fit: contain;
+      margin-bottom: 20px; /* Space between image and title */
+  }
+  .feature-item h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 10px;
+  }
+  
+  .feature-item p {
+      font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.5;
+  }
+  
+  /* Responsiveness for why-choose-section */
+  @media (max-width: 768px) {
+      .why-choose-section h2 {
+          font-size: 2rem;
+          margin-bottom: 40px;
+      }
+      .features-grid {
+          flex-direction: column;
+          gap: 20px;
+      }
+      .feature-item {
+          max-width: 100%;
+          padding: 20px;
+      }
+  }
+  @media (max-width: 480px) {
+      .why-choose-section {
+          padding: 40px 3%;
+      }
+  }
+  
+  /* How It Works Section */
+  .how-it-works-section {
+      background-color: #FFFFFF;
+      padding: 80px 5%;
+      text-align: center;
+  }
+  
+  .how-it-works-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 60px;
+  }
+  
+  .steps-grid {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+  }
+  
+  .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 180px;
+      text-align: center;
+  }
+  
+  .step-item img {
+      width: 200px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+  }
+  
+  .step-item .step-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333333;
+      margin-bottom: 1px;
+  }
+  
+  .step-item p {
+      font-size: 0.95rem;
+      color: #555555;
+      line-height: 1.4;
+  }
+  
+  /* Responsiveness for how-it-works-section */
+  @media (max-width: 1024px) {
+      .steps-grid {
+          justify-content: center;
+          gap: 20px;
+      }
+      .step-item img {
+          width: 70px;
+          height: 70px;
+      }
+      .step-item .step-number {
+          font-size: 1.6rem;
+      }
+      .step-item p {
+          font-size: 0.85rem;
+      }
+  }
+  @media (max-width: 768px) {
+      .how-it-works-section h2 {
+          font-size: 2rem;
+          margin-bottom: 40px;
+      }
+      .steps-grid {
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+      }
+      .step-item {
+          max-width: 100%;
+      }
+      .step-item img {
+          width: 80px;
+          height: 80px;
+      }
+      .step-item .step-number {
+          font-size: 1.8rem;
+      }
+      .step-item p {
+          font-size: 0.95rem;
+      }
+  }
+  @media (max-width: 480px) {
+      .how-it-works-section {
+          padding: 40px 3%;
+      }
+  }
+  
+  /* About Us Section (from your vanilla dashboard.css) */
+  .about-us-section {
+      background-color: #F8F9FA;
+      padding: 80px 5%;
+      text-align: center;
+  }
+  
+  .about-us-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 60px;
+  }
+  
+  .about-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 60px;
+      flex-wrap: wrap;
+      text-align: left;
+  }
+  
+  .about-image {
+      background-color: #FFFFFF; /* Should be removed as image is directly loaded in React */
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      display: block;
+      line-height: 0;
+  }
+  
+  .about-image img {
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: block;
+  }
+  
+  .about-text {
+      max-width: 500px;
+  }
+  
+  .about-text h3 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 20px;
+  }
+  
+  .about-text p {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 30px;
+  }
+  
+  .btn-read-more {
+      background-color: #3F7D58;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 115px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+  
+  .btn-read-more:hover {
+      background-color: #356D4D;
+  }
+  
+  /* Responsiveness for about-us-section */
+  @media (max-width: 1024px) {
+      .about-content {
+          flex-direction: column;
+          gap: 30px;
+      }
+      .about-image {
+          order: -1;
+      }
+      .about-text {
+          text-align: center;
+      }
+  }
+  @media (max-width: 768px) {
+      .about-us-section h2 {
+          font-size: 2rem;
+          margin-bottom: 40px;
+      }
+      .about-image img {
+          max-width: 100%;
+      }
+      .about-text h3 {
+          font-size: 1.6rem;
+      }
+      .about-text p {
+          font-size: 1rem;
+      }
+  }
+  @media (max-width: 480px) {
+      .about-us-section {
+          padding: 40px 3%;
+      }
+  }
+  
+  /* FOOTER */
+  .footer {
+      background-color: #3F7D58;
+      color: white;
+      padding: 60px 5%;
+      text-align: left;
+  }
+  
+  .footer-top {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+  }
+  
+  .footer-column {
+      flex: 1;
+      min-width: 180px;
+  }
+  
+  .footer-column h4 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: white;
+  }
+  
+  .footer-column p {
+      font-size: 1rem;
+      color: #CCCCCC;
+  }
+  
+  .footer-column ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .footer-column ul li {
+      margin-bottom: 10px;
+  }
+  
+  .footer-column ul li a {
+      text-decoration: none;
+      color: #CCCCCC;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+  }
+  
+  .footer-column ul li a:hover {
+      color: #3F7D58;
+  }
+  
+  .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #B2CBBC;
+  }
+  
+  /* Responsiveness for footer */
+  @media (max-width: 768px) {
+      .footer {
+          padding: 40px 4%;
+      }
+      .footer-top {
+          flex-direction: column;
+          gap: 30px;
+      }
+      .footer-column {
+          text-align: center;
+      }
+      .footer-column h4 {
+          margin-top: 20px;
+      }
+  }
+  @media (max-width: 480px) {
+      .footer {
+          padding: 30px 3%;
+      }
+  }
+  /* Gaya baru untuk ikon history */
+  .history-icon {
+      height: 30px;
+      width: 30px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      vertical-align: middle;
+  }
+  
+  .history-icon:hover {
+      transform: scale(1.05);
+  }
+  /* --- About Hero Section NEW --- */
+  .about-hero-new {
+      position: relative;
+      color: white;
+      padding: 100px 5%;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 45px;
+      margin: 20px 5%;
+      overflow: hidden;
+  }
+  
+  .about-hero-new::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* Update path to use the imported image in React */
+      background: url('../assets/images/about.png') no-repeat center center/cover;
+      opacity: 0.8;
+      z-index: -1;
+  }
+  
+  .hero-content-new {
+      position: relative;
+  }
+  
+  .hero-content-new h1 {
+      font-size: 2.9rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+  }
+  
+  .hero-content-new p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 800px;
+      line-height: 1.5;
+      margin: 0 auto;
+  }
+  
+  
+  /* --- Vision and Mission Section --- */
+  .vision-mission-section {
+      background-color: #F8F9FA;
+      padding: 80px 0;
+      text-align: center;
+  }
+  
+  .vision-section-layout,
+  .mission-section-layout {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 40px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+  }
+  
+  /* Vision Section - Text left, Image right */
+  .vision-section-layout {
+      margin-bottom: 80px;
+  }
+  .vision-text-content {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+  }
+  .vision-text-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 20px;
+  }
+  .vision-text-content p {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.6;
+  }
+  .vision-image img {
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Mission Section - Image left, Text right */
+  .mission-section-layout {
+      flex-direction: row;
+  }
+  .mission-text-content {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+  }
+  .mission-text-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 20px;
+  }
+  .mission-text-content ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  .mission-text-content ul li {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      position: relative;
+      padding-left: 25px;
+  }
+  .mission-text-content ul li::before {
+      content: '\2022';
+      color: #3F7D58;
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+      position: absolute;
+      left: 0;
+      top: 0;
+  }
+  
+  .mission-image img {
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  /* --- "About Us Info" Section --- */
+  .about-us-info-section {
+      background-color: #FFFFFF;
+      padding: 80px 0;
+  }
+  
+  .about-us-info-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      align-items: stretch;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 5%;
+      text-align: left;
+  }
+  
+  .about-us-info-heading-wrapper {
+      flex-shrink: 0;
+      max-width: 150px;
+      display: flex;
+      align-items: flex-start;
+      padding-right: 0;
+  }
+  
+  .about-us-info-heading-wrapper h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin: 0;
+      line-height: 1.2;
+  }
+  
+  .green-vertical-separator {
+      width: 5px;
+      background-color: #98E0B5;
+      border-radius: 2px;
+      flex-shrink: 0;
+  }
+  
+  .about-us-info-right {
+      flex-grow: 1;
+      max-width: 700px;
+  }
+  
+  .about-us-info-right p {
+      font-size: 1.1rem;
+      color: #555555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+  }
+  .about-us-info-right p:last-child {
+      margin-bottom: 0;
+  }
+  .about-us-info-right p:first-child {
+      margin-top: 0;
+  }
+  
+  /* --- "Our Core Value" Section --- */
+  .core-values-section {
+      background-color: #F8F9FA;
+      padding: 80px 0;
+      text-align: center;
+  }
+  
+  .core-values-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 60px;
+  }
+  
+  .core-values-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+  }
+  
+  .value-card {
+      background-color: #FFFFFF;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      max-width: 300px;
+      flex-basis: calc(33.33% - 20px);
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+  }
+  
+  .value-card:hover {
+      transform: translateY(-5px);
+  }
+  
+  .value-card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 25px;
+  }
+  
+  .value-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333333;
+      margin-bottom: 15px;
+  }
+  
+  .value-card p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.5;
+  }
+  
+  /* --- "Customer Review" Section --- */
+  .customer-review-section {
+      background-color: #FFFFFF;
+      padding: 80px 0;
+      text-align: center;
+  }
+  
+  .customer-review-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 20px;
+  }
+  
+  .customer-review-subtitle {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 40px;
+  }
+  
+  .customer-review-images {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+      max-width: 1180px;
+      margin: 0 auto;
+  }
+  
+  .customer-review-images img {
+      max-width: 280px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0;
+      flex-shrink: 0;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .customer-review-images img:hover {
+      transform: translateY(-5px);
+      box-shadow: 0;
+  }
+  
+  /* Responsiveness for About Us page sections */
+  @media (max-width: 1024px) {
+      .about-hero-new {
+          padding: 80px 5%;
+          min-height: 350px;
+      }
+      .hero-content-new h1 {
+          font-size: 2.8rem;
+      }
+      .hero-content-new p {
+          font-size: 1.2rem;
+      }
+  
+      .vision-section-layout,
+      .mission-section-layout {
+          flex-direction: column;
+          text-align: center;
+          gap: 30px;
+      }
+      .vision-text-content,
+      .mission-text-content {
+          text-align: center;
+          max-width: 600px;
+      }
+      .vision-image,
+      .mission-image {
+          order: -1;
+      }
+      .vision-image img,
+      .mission-image img {
+          max-width: 100%;
+          width: 400px;
+      }
+      .mission-text-content ul {
+          text-align: left;
+          margin: 0 auto;
+          max-width: 450px;
+      }
+      .mission-text-content ul li {
+          padding-left: 20px;
+      }
+  
+      .about-us-info-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 30px;
+      }
+      .about-us-info-heading-wrapper {
+          max-width: 100%;
+          justify-content: center;
+          padding-right: 0;
+      }
+      .green-vertical-separator {
+          width: 100px;
+          height: 5px;
+          margin: 20px 0;
+      }
+      .about-us-info-heading-wrapper h2 {
+          font-size: 2rem;
+      }
+      .about-us-info-right {
+          text-align: center;
+          max-width: 700px;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .about-hero-new {
+          padding: 60px 5%;
+          min-height: 300px;
+          margin: 15px 4%;
+      }
+      .about-hero-new h1 {
+          font-size: 2.2rem;
+      }
+      .about-hero-new p {
+          font-size: 1rem;
+      }
+  
+      .vision-mission-section {
+          padding: 60px 0;
+      }
+      .vision-section-layout,
+      .mission-section-layout {
+          padding: 20px 0;
+          gap: 20px;
+      }
+      .vision-text-content h2,
+      .mission-text-content h2 {
+          font-size: 2rem;
+          margin-bottom: 15px;
+      }
+      .vision-text-content p,
+      .mission-text-content ul li {
+          font-size: 0.95rem;
+      }
+      .vision-image img,
+      .mission-image img {
+          width: 300px;
+      }
+  
+      .about-us-info-section {
+          padding: 60px 0;
+      }
+      .about-us-info-container {
+          gap: 20px;
+      }
+      .green-vertical-separator {
+          width: 80px;
+      }
+      .about-us-info-heading-wrapper h2 {
+          font-size: 1.8rem;
+      }
+      .about-us-info-right p {
+          font-size: 1rem;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .about-hero-new {
+          padding: 40px 3%;
+          margin: 10px 3%;
+      }
+      .hero-content-new h1 {
+          font-size: 1.8rem;
+      }
+      .hero-content-new p {
+          font-size: 0.9rem;
+      }
+      .vision-mission-section {
+          padding: 40px 0;
+      }
+      .vision-image img,
+      .mission-image img {
+          width: 250px;
+      }
+  
+      .about-us-info-section {
+          padding: 40px 0;
+      }
+      .green-vertical-separator {
+          width: 60px;
+      }
+      .about-us-info-heading-wrapper h2 {
+          font-size: 1.5rem;
+      }
+      .about-us-info-right p {
+          font-size: 0.9rem;
+      }
+  }
+  /* Help Hero Section */
+  .help-hero {
+      position: relative;
+      color: white;
+      padding: 100px 5%;
+      text-align: center;
+      min-height: 400px;
+      height: 400px !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 45px;
+      margin: 20px 5%;
+      overflow: hidden;
+  }
+  
+  .help-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../assets/images/gardening.png') no-repeat center center/cover; /* Ensure path is correct */
+      opacity: 1;
+      z-index: -1;
+  }
+  
+  .hero-content-help {
+      position: relative;
+      max-width: 800px;
+  }
+  
+  .hero-content-help h1 {
+      font-size: 2.9rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: white;
+  }
+  
+  /* FAQ Section */
+  .faq-section {
+      background-color: #FFFFFF;
+      padding: 80px 0 40px 0;
+      text-align: center;
+  }
+  
+  .faq-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 60px;
+  }
+  
+  .faq-item {
+      background-color: #F8F9FA;
+      border: 1px solid #E0E0E0;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: all 0.3s ease;
+  }
+  
+  .faq-item:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 20px 30px;
+      background-color: #FFFFFF;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #333333;
+      cursor: pointer;
+      text-align: left;
+      transition: background-color 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  .faq-question:hover {
+      background-color: #F0F0F0;
+  }
+  
+  /* Styles for the new arrow.png icon */
+  .faq-toggle-icon {
+      width: 20px; /* Adjust size as needed */
+      height: 20px; /* Adjust size as needed */
+      margin-left: 15px;
+      transition: transform 0.3s ease;
+  }
+  
+  .faq-toggle-icon.down {
+      transform: rotate(0deg);
+  }
+  
+  .faq-toggle-icon.up {
+      transform: rotate(180deg);
+  }
+  
+  .faq-answer {
+      padding: 0 30px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+  }
+  
+  .faq-answer p {
+      font-size: 1rem;
+      color: #555555;
+      line-height: 1.6;
+      padding-bottom: 20px;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+  }
+  .faq-answer p:last-child {
+      margin-bottom: 0;
+  }
+  .faq-answer p:first-child {
+      margin-top: 0;
+  }
+  
+  .faq-answer.active {
+      padding-top: 10px;
+  }
+  
+  /* Override padding-top untuk how-it-works-section di halaman help.html */
+  main .how-it-works-section {
+      padding-top: 40px;
+      padding-bottom: 80px;
+  }
+  
+  /* Contact Support Section */
+  .contact-support-section {
+      background-color: #F8F9FA;
+      padding: 80px 0;
+      text-align: center;
+  }
+  
+  .contact-support-section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #3F7D58;
+      margin-bottom: 20px;
+  }
+  
+  .contact-support-section .contact-description {
+      font-size: 1.1rem;
+      color: #555555;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+  }
+  
+  .contact-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 500px;
+      margin: 0 auto;
+      gap: 20px;
+  }
+  
+  .contact-form input[type="text"],
+  .contact-form input[type="email"],
+  .contact-form .message-input { /* applies to textarea as well due to class */
+      width: 100%;
+      padding: 15px 20px;
+      border: 1px solid #CCCCCC;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+  }
+  
+  .contact-form input[type="text"]:focus,
+  .contact-form input[type="email"]:focus,
+  .contact-form .message-input:focus {
+      border-color: #3F7D58;
+      box-shadow: 0 0 0 3px rgba(63, 125, 88, 0.2);
+  }
+  
+  .contact-form .message-input {
+      min-height: 100px;
+      resize: vertical; /* Allow vertical resize for textarea */
+  }
+  
+  
+  .btn-sent {
+      background-color: #3F7D58;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin-top: 10px;
+      width: auto;
+  }
+  
+  .btn-sent:hover {
+      background-color: #356D4D;
+      transform: translateY(-2px);
+  }
+  
+  .btn-sent:active {
+      transform: translateY(0);
+  }
+  
+  
+  /* Responsiveness */
+  @media (max-width: 1024px) {
+      .help-hero {
+          padding: 80px 5%;
+          min-height: 350px;
+      }
+      .hero-content-help h1 {
+          font-size: 2.8rem;
+      }
+      .faq-question {
+          font-size: 1.1rem;
+          padding: 18px 25px;
+      }
+      .faq-answer p {
+          font-size: 0.95rem;
+          padding-bottom: 18px;
+      }
+      main .how-it-works-section {
+          padding-top: 30px;
+          padding-bottom: 60px;
+      }
+      .contact-support-section {
+          padding: 60px 0;
+      }
+      .contact-support-section h2 {
+          font-size: 2rem;
+      }
+      .contact-form {
+          max-width: 400px;
+      }
+      .btn-sent {
+          padding: 12px 30px;
+          font-size: 1rem;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .help-hero {
+          padding: 60px 4%;
+          min-height: 300px;
+          margin: 15px 4%;
+      }
+      .hero-content-help h1 {
+          font-size: 2.2rem;
+      }
+      .faq-section {
+          padding: 40px 0 20px 0;
+      }
+      .faq-section h2 {
+          font-size: 2rem;
+          margin-bottom: 40px;
+      }
+      .faq-question {
+          font-size: 1rem;
+          padding: 15px 20px;
+      }
+      .faq-toggle-icon {
+          width: 18px; /* Adjusted size for mobile */
+          height: 18px; /* Adjusted size for mobile */
+          font-size: 1.1rem; /* This won't apply to img, but kept for consistency if Font Awesome was used */
+      }
+      .faq-answer {
+          padding: 0 20px;
+      }
+      .faq-answer p {
+          font-size: 0.9rem;
+          padding-bottom: 15px;
+      }
+      main .how-it-works-section {
+          padding-top: 20px;
+          padding-bottom: 40px;
+      }
+      .contact-support-section {
+          padding: 40px 0;
+      }
+      .contact-support-section h2 {
+          font-size: 1.7rem;
+      }
+      .contact-support-section .contact-description {
+          font-size: 1rem;
+          margin-bottom: 30px;
+      }
+      .contact-form {
+          max-width: 90%;
+      }
+      .contact-form input,
+      .contact-form .message-input {
+          padding: 12px 15px;
+          font-size: 0.9rem;
+      }
+  }
+  
+  @media (max-width: 480px) {
+      .help-hero {
+          padding: 40px 3%;
+          margin: 10px 3%;
+      }
+      .hero-content-help h1 {
+          font-size: 1.8rem;
+      }
+      .faq-section {
+          padding: 30px 0 15px 0;
+      }
+      .faq-question {
+          font-size: 0.9rem;
+          padding: 12px 15px;
+      }
+      .faq-toggle-icon {
+          width: 16px; /* Adjusted size for very small screens */
+          height: 16px; /* Adjusted size for very small screens */
+          font-size: 1rem;
+      }
+      .faq-answer {
+          padding: 0 15px;
+      }
+      .faq-answer p {
+          font-size: 0.85rem;
+          padding-bottom: 12px;
+      }
+      main .how-it-works-section {
+          padding-top: 15px;
+          padding-bottom: 30px;
+      }
+      .contact-support-section h2 {
+          font-size: 1.6rem;
+      }
+      .contact-support-section .contact-description {
+          font-size: 0.9rem;
+          margin-bottom: 20px;
+      }
+      .contact-form {
+          gap: 15px;
+      }
+      .contact-form input,
+      .contact-form .message-input {
+          padding: 10px 12px;
+          font-size: 0.85rem;
+      }
+      .btn-sent {
+          padding: 10px 25px;
+          font-size: 0.9rem;
+      }
+  }

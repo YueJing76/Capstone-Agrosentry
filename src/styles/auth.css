@@ -1,0 +1,62 @@
+.auth-container {
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Gunakan background solid */
+  padding: 20px 0;
+}
+
+.auth-card {
+  border: none !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+  max-width: 400px;
+  width: 100%;
+}
+
+.auth-title {
+  color: #495057;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #6c757d;
+}
+
+/* Form styling */
+.form-control {
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  border: 1px solid #ced4da !important;
+}
+
+.form-control:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25) !important;
+}
+
+.btn-primary {
+  background-color: #0d6efd !important;
+  border-color: #0d6efd !important;
+  border-radius: 0.5rem !important;
+  padding: 0.75rem 1rem !important;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7 !important;
+  border-color: #0a58ca !important;
+  transform: translateY(-1px);
+}
+
+/* Link styling */
+a {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0b5ed7;
+  text-decoration: underline;
+}
