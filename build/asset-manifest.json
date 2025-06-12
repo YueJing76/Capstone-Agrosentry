@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c9ccde60.css",
+    "main.js": "/static/js/main.7a132ef7.js",
+    "static/media/right.png": "/static/media/right.a8c1fe00c7d01e26f732.png",
+    "static/media/left.png": "/static/media/left.7349347ef65405a5cff5.png",
+    "static/media/login.jpg": "/static/media/login.90f416c9ded75c782dc2.jpg",
+    "static/media/plant1.png": "/static/media/plant1.34c25f066fec446485fc.png",
+    "static/media/about-us.png": "/static/media/about-us.48137e5eaf88b6a3b6bd.png",
+    "static/media/background1.jpg": "/static/media/background1.958e37079939876a5457.jpg",
+    "static/media/picture.png": "/static/media/picture.6aba77ba0fb81e0f5580.png",
+    "static/media/logo-agrosentry1.png": "/static/media/logo-agrosentry1.cfaffc9076b32eba3e29.png",
+    "static/media/customer3.png": "/static/media/customer3.7658fe834a8f77bbdc7d.png",
+    "static/media/about.png": "/static/media/about.0ee0ab80401141889de9.png",
+    "static/media/customer4.png": "/static/media/customer4.a00190b16c59c767d066.png",
+    "static/media/customer1.png": "/static/media/customer1.8eebe5bca5c142e07e04.png",
+    "static/media/core3.png": "/static/media/core3.1f99a1873b0722b85af7.png",
+    "static/media/customer2.png": "/static/media/customer2.1cea977c54d606160462.png",
+    "static/media/gardening.png": "/static/media/gardening.8e1253e30a98811e62d3.png",
+    "static/media/core1.png": "/static/media/core1.53eb800930f071068a8e.png",
+    "static/media/core2.png": "/static/media/core2.d113c00f02fdea7b68c9.png",
+    "static/media/search.png": "/static/media/search.07a87b3a982698f087aa.png",
+    "static/media/file-upload.png": "/static/media/file-upload.31fda3f1bd13c8dfd162.png",
+    "static/media/computer.png": "/static/media/computer.10326c3a6869243b5d57.png",
+    "index.html": "/index.html",
+    "main.c9ccde60.css.map": "/static/css/main.c9ccde60.css.map",
+    "main.7a132ef7.js.map": "/static/js/main.7a132ef7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c9ccde60.css",
+    "static/js/main.7a132ef7.js"
+  ]
+}
