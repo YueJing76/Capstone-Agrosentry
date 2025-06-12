@@ -31,4 +31,4 @@ Branches:
 PPT:
 https://www.canva.com/design/DAGqEIgYFTs/FBtA85PB5l739fF-UMYg2Q/edit
 
-Deploy: https://tesagro.netlify.app/
+Deploy: https://tesagro.netlify.app/ (tidak berfungsi karena network occured)
