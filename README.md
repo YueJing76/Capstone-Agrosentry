@@ -27,3 +27,6 @@ Branches:
 1. Machine Learning: https://github.com/YueJing76/Capstone-Agrosentry/tree/ML
 2. Backend: https://github.com/YueJing76/Capstone-Agrosentry/tree/BE
 3. Frontend: https://github.com/YueJing76/Capstone-Agrosentry/tree/FE
+
+PPT:
+https://www.canva.com/design/DAGqEIgYFTs/FBtA85PB5l739fF-UMYg2Q/edit
